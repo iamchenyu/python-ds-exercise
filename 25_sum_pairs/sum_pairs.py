@@ -21,3 +21,35 @@ def sum_pairs(nums, goal):
         >>> sum_pairs([11, 20, 4, 2, 1, 5], 100)
         ()
     """
+
+    # Solution
+    already_checked = set()
+    for num in nums:
+        other_pair = goal - num
+        if other_pair in already_checked:
+            return (other_pair, num)
+        already_checked.add(num)
+    return ()
+
+
+
+    # checked = []
+    # result = []
+    # for num in nums: 
+    #     other_pair = goal - num
+    #     if other_pair in nums and other_pair not in checked:
+    #         checked.append(num)
+    #         result.append((num, other_pair))
+    # if result:
+    #     idx = min([nums.index(val2) for (val1, val2) in result])
+    #     for (val1, val2) in result:
+    #          if nums.index(val2) == idx:
+    #             return ((val1, val2))
+    # else:
+    #     return ()
+        
+         
+    
+
+        
+sum_pairs([5, 1, 4, 8, 3, 2], 7)
